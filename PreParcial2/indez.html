@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+ <link rel="stylesheet" href="stylepre2.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Layout</title>
+  
+  <style>   
+
+  /* ===== Reset ===== */
+    *{ box-sizing: border-box; margin:0; padding:0; }
+    html,body{ height:100%; }
+
+    /* ===== Paleta ===== */
+    :root{
+      --green:  #2e7d32;         /* header / cuadrados verdes */
+      --green-b:#1b5e20;         /* borde verde oscuro */
+      --red:    #e53935;         /* franja roja */
+      --blue:   #42a5f5;         /* bloques azules */
+      --yellow: #f9c221;         /* área amarilla */
+      --grey:   #bdbdbd;         /* tarjetas grises */
+      --purple: #d28ad8;         /* footer */
+      --gap: 12px;               /* separación interna */
+      --b: 8px;                  /* grosor de marco/borde */
+    }
+
+    /* ===== Contenedor a tamaño de viewport EXACTO ===== */
+    .page{ width:100vw; height:100vh; overflow:hidden; display:grid;
+      grid-template-rows: 110px 40px 1fr 90px; /* header, ribbon, content, footer */
+      grid-template-areas: "hdr" "rbn" "cnt" "ftr";
+    }
+    header{ grid-area: hdr; background: var(--green); }
+    .ribbon{ grid-area: rbn; background: var(--red); }
+    footer{ grid-area: ftr; background: var(--purple); }
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header></header>
+    <div class="ribbon"></div>
+    <main class="content">
+      <section class="stage">
+        <!-- Columna izquierda / derecha según breakpoint -->
+        <aside class="side">
+          <div class="pane"></div>
+          <div class="pane blue"></div>
+          <!-- Tercer bloque aparece en desktop por CSS -->
+          <div class="pane" style="display:none"></div>
+        </aside>
+
+        <!-- Azul grande -->
+        <section class="main">
+          <div class="main-inner">
+            <div class="mini"></div>
+            <div class="mini"></div>
+          </div>
+        </section>
+
+        <!-- Tarjetas inferiores (sólo móvil) -->
+        <section class="cards">
+          <div class="card big1"></div>
+          <div class="card big2"></div>
+          <div class="card tall"></div>
+        </section>
+
+        <!-- Barra azul inferior (sólo móvil) -->
+        <div class="bar"></div>
+
+        <!-- Widgets inferiores (sólo desktop) -->
+        <section class="widgets" style="display:none">
+          <div class="sq"></div>
+          <div class="sq"></div>
+        </section>
+      </section>
+    </main>
+    <footer></footer>
+  </div>
+</body>
+</html>
