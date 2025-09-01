@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout Responsive Grid + Flex</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: sans-serif;
+    background: #f3f3f3;
+  }
+
+  /* CONTENEDOR PRINCIPAL */
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    max-width: 1200px;
+    margin: auto;
+    
+  }
+
+  /* HERO */
+  .hero {
+    background: #cfe4f7;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  /* GRID DE LINKS (1-4) */
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .link-box {
+    background: #a8d1f2;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  /* SECCIONES B, C, D */
+  .section {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .section img {
+    width: 100%;
+    border-radius: 8px;
+    background: #ccc;
+  }
+
+  
+  footer {
+    background: #bcd4e6;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) and (orientation: landscape) {
+    .links-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .section {
+      flex-direction: row;
+      align-items: center;
+    }
+    .section-content {
+      flex: 1;
+    }
+    .section img {
+      flex: 1;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .links-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- A -->
+  <div class="hero">
+    <h1>Main Hero Content</h1>
+    <p>BETA Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+
+  <!-- Links 1-4 -->
+  <div class="links-grid">
+    <div class="link-box">4</div>
+   <div class="link-box">3</div>
+   <div class="link-box">2</div>
+   <div class="link-box">1</div>
+  </div>
+
+  <!-- B -->
+  <div class="section">
+    <div class="section-content">
+      <h2>Main Service Offering B</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <img src="https://www.shutterstock.com/image-vector/cute-allosaurus-dinosaur-illustration-600nw-2511404071.jpg" alt="Imagen B">
+  </div>
+
+  <!-- C -->
+  <div class="section">
+    <div class="section-content">
+      <h2>Main Service Offering C</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <img src="https://www.shutterstock.com/image-vector/cute-allosaurus-dinosaur-illustration-600nw-2511404071.jpg" alt="Imagen C">
+  </div>
+
+  <!-- D -->
+  <div class="section">
+    <div class="section-content">
+      <h2>Main Service Offering D</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <img src="https://www.shutterstock.com/image-vector/cute-allosaurus-dinosaur-illustration-600nw-2511404071.jpg" alt="Imagen D">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Contact + Footer Links | Social Media
+  </footer>
+</div>
+
+</body>
+</html>
